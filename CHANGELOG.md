@@ -7,7 +7,7 @@ e questo progetto aderisce al "[Semantic Versioning](https://semver.org/spec/v2.
 
 ## [Unreleased] - 14 Gennaio 2024
 
-### Aggiunti (Added)
+### Added (Aggiunte - Novità)
 
 - Creazione del progetto Java Maven
 - Creazione e caricamento del repository su [GitHub](https://github.com/matbagnoletti/GrandPrix-Gruppo1-5AINF.git)
@@ -15,14 +15,14 @@ e questo progetto aderisce al "[Semantic Versioning](https://semver.org/spec/v2.
 - Aggiunto il file `LICENSE` per la licenza del progetto
 - Aggiunto il file `CHANGELOG.md` per tenere traccia delle modifiche al progetto
 
-### Risolti (Fixed)
+### Fixed (Correzioni)
 
 Nulla
 
-### Modificati (Changed)
+### Changed (Modifiche)
 
 Nulla
 
-### Rimossi (Removed)
+### Removed (Rimozioni)
 
 Nulla
