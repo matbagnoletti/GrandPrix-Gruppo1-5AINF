@@ -14,7 +14,7 @@ Parole chiave (keywords) utilizzate per identificare il tipo di modifica:
 
 ## [Unreleased] - 14 Gennaio 2024
 
-### Added (Aggiunte - Novità)
+### Added
 
 - Creazione del progetto Java Maven
 - Creazione e caricamento del repository su [GitHub](https://github.com/matbagnoletti/GrandPrix-Gruppo1-5AINF.git)

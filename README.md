@@ -16,4 +16,8 @@
 >
 > Istituto: [**ITTS A. Volta**](https://www.avoltapg.edu.it/), Perugia (PG), Italia
 > 
-> Tipologia: Java Maven Project (per compatibilità con IntelliJ IDEA e NetBeans)
+> Tipologia: `Java Maven Project` (per compatibilità con IntelliJ IDEA e NetBeans)
+> 
+> Storico modifiche: vedi il file [**CHANGELOG.md**](CHANGELOG.md)
+> 
+> Licenza d'uso: vedi il file [**LICENSE**](LICENSE)
