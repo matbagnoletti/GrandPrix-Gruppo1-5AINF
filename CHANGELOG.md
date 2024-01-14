@@ -2,8 +2,15 @@
 
 Tutte le modifiche degne di nota di questo progetto verranno documentate in questo file.
 
-Il formato è basato su "[Keep a Changelog](https://keepachangelog.com/en/1.1.0/)",
-e questo progetto aderisce al "[Semantic Versioning](https://semver.org/spec/v2.0.0.html)".
+Questo formato è basato su "[Keep a Changelog](https://keepachangelog.com/en/1.1.0/)".
+
+Parole chiave (keywords) utilizzate per identificare il tipo di modifica:
+- `Added` per aggiunte e novità.
+- `Changed` per modifiche a strutture esistenti.
+- `Deprecated` per deprecazioni.
+- `Removed` per rimozioni.
+- `Fixed` per correzioni di bug o altri errori.
+- `Security` per modifiche di sicurezza.
 
 ## [Unreleased] - 14 Gennaio 2024
 
@@ -14,15 +21,3 @@ e questo progetto aderisce al "[Semantic Versioning](https://semver.org/spec/v2.
 - Aggiunto il file `README.md` per la documentazione del progetto
 - Aggiunto il file `LICENSE` per la licenza del progetto
 - Aggiunto il file `CHANGELOG.md` per tenere traccia delle modifiche al progetto
-
-### Fixed (Correzioni)
-
-Nulla
-
-### Changed (Modifiche)
-
-Nulla
-
-### Removed (Rimozioni)
-
-Nulla
