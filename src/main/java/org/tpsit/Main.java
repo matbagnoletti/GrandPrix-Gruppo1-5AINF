@@ -10,7 +10,5 @@ public class Main {
      */
     public static void main(String[] args) {
         //TODO Implementare il main
-        // commento Ismail di prova
-        // commento 2
     }
 }
