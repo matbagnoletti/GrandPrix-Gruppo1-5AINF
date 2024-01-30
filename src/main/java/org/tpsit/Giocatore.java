@@ -3,10 +3,12 @@ package org.tpsit;
 public class Giocatore {
    private String username;
    private String password;
+   private Cifrario cifrario;
 
-   public Giocatore(String username, String password) {
+   public Giocatore(String username, String password,String verme) {
       this.username = username;
-      this.password = password;
+      this.cifrario = new Cifrario(verme);
+      this.password = cifrario.cifra(password);
    }
 
    public void setUsername(String username) {
@@ -14,7 +16,7 @@ public class Giocatore {
    }
 
    public void setPassword(String password) {
-      this.password = password;
+      this.password = cifrario.cifra(password);
    }
 
    public String getUsername() {
@@ -22,6 +24,6 @@ public class Giocatore {
    }
 
    public String getPassword() {
-      return password;
+      return cifrario.decifra(password);
    }
 }
