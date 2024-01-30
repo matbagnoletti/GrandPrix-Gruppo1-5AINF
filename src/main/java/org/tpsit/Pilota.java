@@ -1,18 +1,29 @@
 package org.tpsit;
 
+/**
+ * Classe che rappresenta un pilota.
+ */
 public class Pilota {
     private String nome;
     private String cognome;
     private String squadra;
     private int vittorie;
-    private int gare_giocate;
-
-    public Pilota(String nome, String cognome, String squadra, int vittorie, int gare_giocate) {
+    private int gareGiocate;
+    
+    /**
+     * Costruttore della classe Pilota.
+     * @param nome Nome del pilota.
+     * @param cognome Cognome del pilota.
+     * @param squadra Squadra del pilota.
+     * @param vittorie Vittorie del pilota.
+     * @param gareGiocate Gare giocate in totale dal pilota.
+     */
+    public Pilota(String nome, String cognome, String squadra, int vittorie, int gareGiocate) {
         this.nome = nome;
         this.cognome = cognome;
         this.squadra = squadra;
         this.vittorie = vittorie;
-        this.gare_giocate = gare_giocate;
+        this.gareGiocate = gareGiocate;
     }
 
     public String getNome() {
@@ -31,8 +42,8 @@ public class Pilota {
         return vittorie;
     }
 
-    public int getGare_giocate() {
-        return gare_giocate;
+    public int getGareGiocate() {
+        return gareGiocate;
     }
 
     public void setNome(String nome) {
@@ -51,7 +62,11 @@ public class Pilota {
         this.vittorie = vittorie;
     }
 
-    public void setGare_giocate(int gare_giocate) {
-        this.gare_giocate = gare_giocate;
+    public void setGareGiocate(int gareGiocate) {
+        this.gareGiocate = gareGiocate;
     }
+    
+    //TODO: 
+    // 1) Gestire il salvataggio e il recupero dei dati da file.
+    // 2) Rendere la classe Pilota un Thread.
 }

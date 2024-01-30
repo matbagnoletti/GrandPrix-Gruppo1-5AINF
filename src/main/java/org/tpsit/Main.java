@@ -9,6 +9,6 @@ public class Main {
      * @param args parametri da linea di comando
      */
     public static void main(String[] args) {
-        //TODO Implementare il main
+        //TODO: Implementare il main
     }
 }
