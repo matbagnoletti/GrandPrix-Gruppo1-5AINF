@@ -8,5 +8,11 @@
     <img src="https://img.shields.io/github/languages/top/matbagnoletti/GrandPrix-Gruppo1-5AINF?style=for-the-badge" alt="Linguaggio">
 </p>
 
+## Descrizione
+
+## Struttura del progetto
+
+## Utilizzo
+
 ## Licenza d'uso
 Questo progetto (e tutte le sue versioni) sono rilasciate sotto la [MB Collective Copyleft License](LICENSE).
