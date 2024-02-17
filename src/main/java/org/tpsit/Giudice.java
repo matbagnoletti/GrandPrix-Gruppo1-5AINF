@@ -70,7 +70,7 @@ public class Giudice {
      * Metodo statico che permette di stampare i pit stop effettuati dai piloti.
      * @param squadra la squadra del pilota che ha effettuato il pit stop.
      */
-    public static void stampaPitstop(String squadra) {
+    public static synchronized void stampaPitstop(String squadra) {
         System.out.println("Il pilota della " + squadra + " ha effettuato un pit stop!");
     }
 }
