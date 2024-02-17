@@ -1,7 +1,5 @@
 package org.tpsit;
 
-import java.io.*;
-
 /**
  * @author Matteo Bagnoletti Tini
  * @version 1.0

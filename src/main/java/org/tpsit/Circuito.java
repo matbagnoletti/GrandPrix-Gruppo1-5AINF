@@ -5,10 +5,30 @@ package org.tpsit;
  */
 
 public class Circuito {
+    /**
+     * Nome del circuito.
+     */
     private String nome;
-    private int lunghezza; //in metri
+    /**
+     * Lunghezza del circuito in metri.
+     */
+    private int lunghezza;
+    /**
+     * Numero di PitStop permessi del circuito.
+     */
     private int numeroPitStop;
+    /**
+     * Numero di giri del circuito.
+     */
     private int numeroGiri;
+    /**
+     * Lunghezza di un giro del circuito calcolato matematicamente.
+     */
+    private int lunghezzaGiro;
+    /**
+     * Variabile booleana che indica se la safety car è attiva.
+     */
+    private boolean safetyCar;
 
     /**
      * Costruttore della classe Circuito.
@@ -22,6 +42,8 @@ public class Circuito {
         this.lunghezza = lunghezza;
         this.numeroPitStop = numeroPitStop;
         this.numeroGiri = numeroGiri;
+        this.safetyCar = false;
+        this.lunghezzaGiro = lunghezza / numeroGiri;
     }
 
     /**
@@ -57,16 +79,18 @@ public class Circuito {
     }
 
     /**
-     * Metodo che restituisce una stringa che descrive il circuito.
-     * @return stringa che descrive il circuito
+     * Metodo che restituisce se la safety car è attiva.
+     * @param safetyCar true se la safety car è attiva, false altrimenti.
      */
-    @Override
-    public String toString() {
-        return "Circuito{" +
-                "nome='" + nome + '\'' +
-                ", lunghezza=" + lunghezza +
-                ", numeroPitStop=" + numeroPitStop +
-                ", numeroGiri=" + numeroGiri +
-                '}';
+    public void setSafetyCar(boolean safetyCar) {
+        this.safetyCar = safetyCar;
+    }
+
+    /**
+     * Metodo che restituisce la lunghezza di un singolo giro in metri.
+     * @return lunghezzaGiro
+     */
+    public int getLunghezzaGiro() {
+        return lunghezzaGiro;
     }
 }

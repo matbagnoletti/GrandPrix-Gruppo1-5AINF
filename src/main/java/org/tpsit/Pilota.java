@@ -3,35 +3,49 @@ package org.tpsit;
 /**
  * Classe che rappresenta un pilota.
  */
-public class Pilota {
+public class Pilota extends Thread {
+    /**
+     * Nome del pilota.
+     */
     private String nome;
-    private String cognome;
+    /**
+     * Squadra di appartenenza del pilota.
+     */
     private String squadra;
+    /**
+     * Numero di vittorie del pilota.
+     */
     private int vittorie;
+    /**
+     * Numero di gare giocate in totale dal pilota.
+     */
     private int gareGiocate;
+    /**
+     * Variabile booleana che indica se il pilota ha avuto un incidente.
+     */
+    private boolean incidentato = false;
+    /**
+     * Auto del pilota.
+     */
+    public Auto auto;
     
     /**
      * Costruttore della classe Pilota.
      * @param nome Nome del pilota.
-     * @param cognome Cognome del pilota.
      * @param squadra Squadra del pilota.
      * @param vittorie Vittorie del pilota.
      * @param gareGiocate Gare giocate in totale dal pilota.
      */
-    public Pilota(String nome, String cognome, String squadra, int vittorie, int gareGiocate) {
+    public Pilota(String nome, String squadra, int vittorie, int gareGiocate, Circuito circuito) {
         this.nome = nome;
-        this.cognome = cognome;
         this.squadra = squadra;
         this.vittorie = vittorie;
         this.gareGiocate = gareGiocate;
+        this.auto = new Auto(squadra, circuito);
     }
 
     public String getNome() {
         return nome;
-    }
-
-    public String getCognome() {
-        return cognome;
     }
 
     public String getSquadra() {
@@ -46,27 +60,18 @@ public class Pilota {
         return gareGiocate;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    @Override
+    public void run() {
+        //TODO:
+        // 1) Il pilota percorre il circuito finché non ha completato tutti i giri o non ha avuto un incidente.
+        // 2) Ogni volta che il pilota completa un giro, lo deve comunicare al giudice che stampa la classifica.
+        // 3) Ad ogni giro il pilota dovrà attendere un po' di tempo (ad esempio 1 secondo) prima di percorrere il giro successivo.
     }
 
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
+    /**
+     * Imposta il pilota come incidentato
+     */
+    public void setIncidentato() {
+        this.incidentato = true;
     }
-
-    public void setSquadra(String squadra) {
-        this.squadra = squadra;
-    }
-
-    public void setVittorie(int vittorie) {
-        this.vittorie = vittorie;
-    }
-
-    public void setGareGiocate(int gareGiocate) {
-        this.gareGiocate = gareGiocate;
-    }
-    
-    //TODO: 
-    // 1) Gestire il salvataggio e il recupero dei dati da file.
-    // 2) Rendere la classe Pilota un Thread.
 }
