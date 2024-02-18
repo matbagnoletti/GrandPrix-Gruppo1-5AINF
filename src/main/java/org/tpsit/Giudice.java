@@ -73,4 +73,4 @@ public class Giudice {
     public static synchronized void stampaPitstop(String squadra) {
         System.out.println("Il pilota della " + squadra + " ha effettuato un pit stop!");
     }
-} ismailhadeg1234
+} 
