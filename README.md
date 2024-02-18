@@ -9,7 +9,8 @@
 </p>
 
 ## Descrizione
-
+Questo progetto ha come scopo di fare una simulazione di una gara di auto da corsa in formato java, i dati dei piloti e delle loro auto sono memorizzati in un file, così come quelle dei giocatori e che in particolare le password dei giocatori siano cifrate secondo il cifrario di Vigenère e che ogni giocatore può scegliere il numero di auto da far partire contemporaneamente e il circuito su cui gareggiano, il quale ha una lunghezza che viene imposta dal giocatore, come anche il numero di giri, il numero di possibili pit stop e inoltre può inoltre scegliere di truccare una macchina o di fermarne una per un incidente e se far intervenire ad un certo punto della gara la safety car e infine ci dara la classe giudice di gara che deve poter comunicare a tutti i partecipanti e al pubblico l’inizio e la fine della gara e al termine della gara deve poter comunicare il vincitore e poi salvare i dati della classifica in un file che può essere letto dal giocatore alla fine del gioco.
+    
 ## Struttura del progetto
 
 ## Utilizzo
