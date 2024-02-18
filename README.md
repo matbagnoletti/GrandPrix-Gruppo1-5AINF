@@ -5,11 +5,10 @@
 <p align="center" style="font-family: monospace">Corso TPSIT a.s. 2023/2024, <a href="https://www.avoltapg.edu.it/">ITTS A. Volta (PG)</a></p>
 <p align="center">
     <img src="https://img.shields.io/github/last-commit/matbagnoletti/GrandPrix-Gruppo1-5AINF?style=for-the-badge" alt="Ultimo commit">
-    <img src="https://img.shields.io/github/languages/top/matbagnoletti/GrandPrix-Gruppo1-5AINF?style=for-the-badge" alt="Linguaggio">
+    <img src="https://img.shields.io/badge/Language-Java-blue?style=for-the-badge" alt="Java">
 </p>
 
-## Disclaimer
-Questo progetto è ancora in fase di sviluppo e test. Se ne sconsiglia l'utilizzo fino a quando non ne sarà rilasciata una versione.
+> [!CAUTION] Questo progetto è ancora in fase di sviluppo e test. Se ne sconsiglia l'utilizzo fino a quando non ne sarà rilasciata una versione ufficiale.
 
 ## Descrizione e obiettivi
 Questo progetto ha come scopo quello di simulare una gara di auto da corsa in Java in ambiente multi-thread.
