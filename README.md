@@ -48,5 +48,8 @@ Il progetto si compone dalle seguenti classi:
 ## Utilizzo
 Per poter utilizzare il progetto è necessario eseguire il file [Giudice.java](src/main/java/org/tpsit/Giudice.java) e seguire le istruzioni stampate a video.
 
+## Storico del progetto
+Tutte le modifiche degne di nota di questo progetto verranno documentate e rese pubbliche nel file [CHANGELOG.md](CHANGELOG.md).
+
 ## Licenza d'uso
 Questo progetto (e tutte le sue versioni) sono rilasciate sotto la [MB Collective Copyleft License](LICENSE).
