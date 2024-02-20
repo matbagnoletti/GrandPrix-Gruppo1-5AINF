@@ -43,3 +43,13 @@ Parole chiave (keywords) utilizzate per identificare il tipo di modifica:
 - Modificata la classe `Pilota` per l'aggiunta di un'auto associata a ciascun pilota, nonché per la gestione della lettura e scrittura dei dati su file
 - Modificata la classe `Giocatore` per la gestione della lettura e scrittura dei dati su file
 - Modificata la classe `Circuito` per la gestione della lettura e scrittura dei dati su file
+
+## [Unreleased] - 20 Febbraio 2024
+
+### Changed
+
+- Modificata la classe `Giudice` per l'autenticazione dell'utente e la creazione del circuito.
+
+### Fixed
+
+- Corretta la classe `Cifrario` impostando sia il `verme` che il `testoInChiaro` in maiuscolo per evitare problemi di cifratura con la matrice.
