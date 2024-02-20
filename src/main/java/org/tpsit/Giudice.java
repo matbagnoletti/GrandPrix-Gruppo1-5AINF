@@ -50,17 +50,16 @@ public class Giudice {
         System.out.println("Qual'è il tuo username?");
         String username = scanner.nextLine();
 
-        System.out.println("Qual'è la tua password di cifratura? (solo lettere. se non ne possiedi una inventala)");
+        System.out.println("Qual'è la tua password di cifratura? (Inserisci solo lettere. Se non possiedi un account creala ora)");
         String verme = scanner.nextLine();
 
         Giocatore giocatore = new Giocatore(username, verme);
-        System.out.println(giocatore.getUsername());
 
         // verificare se l'utente esiste già con il metodo ricercaGiocatore()
         if(giocatore.ricercaGiocatore()){
             // se esiste allora invocare il metodo accesso(password)
 
-            System.out.println("Qual'è la password del tuo account?");
+            System.out.println("Account trovato! Qual'è la password del tuo account?");
             String password = scanner.nextLine();
             if(giocatore.accesso(password)){
                 System.out.println("Accesso eseguito");
@@ -71,7 +70,7 @@ public class Giudice {
         } else {
             // altrimenti invocare registrazione(password)
 
-            System.out.println("Qual'è la password del tuo account?");
+            System.out.println("Account NON trovato! Scegli la password per il tuo account");
             String password = scanner.nextLine();
             if(giocatore.registrazione(password)){
                 System.out.println("Account creato");
@@ -81,8 +80,24 @@ public class Giudice {
             }
         }
         
-        //TODO: GESTIRE LE SPECIFICHE DEL CIRCUITO
-        
+        // GESTIRE LE SPECIFICHE DEL CIRCUITO
+        System.out.println("Che nome vuoi dare al tuo circuito?");
+        String nomecircuito = scanner.nextLine();
+
+        System.out.println("Quale sarà la lunghezza in metri del circuito");
+        int lunghezza = Integer.parseInt(scanner.nextLine());
+        // si poteva fare anche come scanner.nextInt();
+
+        System.out.println("Quanti pit stop vuoi fare?");
+        int pitstop = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Qunati giri ci saranno nella gara?");
+        int girigara = Integer.parseInt(scanner.nextLine());
+
+        Circuito circuito = new Circuito(nomecircuito, lunghezza, pitstop, girigara);
+
+        System.out.println("Circuito creato: " + circuito.getNome() + ", di lunghezza " + circuito.getLunghezza() + ", di " + circuito.getNumeroGiri() + " giri e " + circuito.getNumeroPitStop() + " pit stop disponibili.");
+
         //TODO: RECUPERARE I DATI DEI PILOTI DAL FILE
         
         //TODO: SALVARE LA SCELTA DEL PILOTA DELL'UTENTE

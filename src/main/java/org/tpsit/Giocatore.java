@@ -85,6 +85,13 @@ public class Giocatore {
     */
    public boolean registrazione(String password) {
         if (username != null && !username.equalsIgnoreCase("")) {
+           File cartellaGiocatori = new File("giocatori");
+           if(!cartellaGiocatori.exists() && !cartellaGiocatori.isDirectory()){
+               if(!cartellaGiocatori.mkdir()){
+                   return false;
+               }
+           }
+
            File fileUtente = new File("giocatori/" + username + ".giocatore");
             try {
                 if(!fileUtente.createNewFile()){ // Crea il file
@@ -94,7 +101,7 @@ public class Giocatore {
                 return false;
             }
             try (BufferedWriter scrittore = new BufferedWriter(new FileWriter("giocatori/" + username + ".giocatore"))) {
-              scrittore.write(cifrario.cifra(password)); // Scrive la password cifrata nel file
+              scrittore.write(cifrario.cifra(password.toUpperCase())); // Scrive la password cifrata nel file
               return true;
            } catch (IOException e) {
               return false;
