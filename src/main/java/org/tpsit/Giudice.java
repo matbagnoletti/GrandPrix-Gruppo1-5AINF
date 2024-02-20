@@ -44,7 +44,42 @@ public class Giudice {
     private static Circuito circuito;
     
     public static void main(String[] args) {
-        //TODO: GESTIRE IL RECUPERO O IL SALVATAGGIO DEI DATI DELL'UTENTE (Giocatore)
+        Scanner scanner= new Scanner(System.in);
+
+        // GESTIRE IL RECUPERO O IL SALVATAGGIO DEI DATI DELL'UTENTE (Giocatore)
+        System.out.println("Qual'è il tuo username?");
+        String username = scanner.nextLine();
+
+        System.out.println("Qual'è la tua password di cifratura? (solo lettere. se non ne possiedi una inventala)");
+        String verme = scanner.nextLine();
+
+        Giocatore giocatore = new Giocatore(username, verme);
+        System.out.println(giocatore.getUsername());
+
+        // verificare se l'utente esiste già con il metodo ricercaGiocatore()
+        if(giocatore.ricercaGiocatore()){
+            // se esiste allora invocare il metodo accesso(password)
+
+            System.out.println("Qual'è la password del tuo account?");
+            String password = scanner.nextLine();
+            if(giocatore.accesso(password)){
+                System.out.println("Accesso eseguito");
+            } else{
+                System.out.println("Password sbagliata");
+                System.exit(1);
+            }
+        } else {
+            // altrimenti invocare registrazione(password)
+
+            System.out.println("Qual'è la password del tuo account?");
+            String password = scanner.nextLine();
+            if(giocatore.registrazione(password)){
+                System.out.println("Account creato");
+            } else{
+                System.out.println("Impossibile creare l'account");
+                System.exit(1);
+            }
+        }
         
         //TODO: GESTIRE LE SPECIFICHE DEL CIRCUITO
         
