@@ -2,35 +2,43 @@ package org.tpsit;
 
 import java.util.Random;
 
+/**
+ * Classe che rappresenta l'auto da corsa.
+ * @author Matteo Bagnoletti Tini
+ */
 public class Auto {
-    /**
-     * Squadra di appartenenza dell'auto.
-     * Rimane costante.
-     */
     private final String squadra;
-    /**
-     * Circuito su cui l'auto sta correndo.
-     * Rimane costante.
-     */
     public final Circuito circuito;
+
     /**
-     * Spazio percorso dall'auto in metri.
+     * Indica se l'auto è stata sabotata nella fase di avvio gara dall'utente
+     * @see Giudice
      */
+    private boolean sabotata;
+
+    /**
+     * Indica se l'auto è incidentata.
+     * @see Giudice
+     */
+    private boolean incidente;
     private int spazioPercorso;
-    /**
-     * Spazio rimanente da percorrere in metri.
-     */
     private int spazioRimanente;
     /**
-     * Numero di pit stop effettuati dall'auto.
+     * Numero di pit stop effettuati.
      */
     private int pitstopEffettuati;
     public Auto(String squadra, Circuito circuito) {
         this.squadra = squadra;
-        this.spazioPercorso = 0;
         this.circuito = circuito;
+        this.spazioPercorso = 0;
         this.spazioRimanente = circuito.getLunghezza();
         this.pitstopEffettuati = 0;
+        this.sabotata = false;
+        this.incidente = false;
+    }
+
+    public void setSabotata() {
+        this.sabotata = true;
     }
 
     /**
@@ -43,13 +51,13 @@ public class Auto {
     }
 
     /**
-     * Metodo che genera la possibilità di effettuare un pit stop o meno.
+     * Metodo che determina la possibilità di effettuare un pit stop o meno.
      * @return true se effettua il pit stop, false altrimenti.
      */
-    private boolean pitstop(){
+    public boolean pitstop(){
         if(pitstopEffettuati < circuito.getNumeroPitStop()) {
             Random random = new Random();
-            if(random.nextInt() == 1) {
+            if(random.nextInt(5) == 4) {
                 pitstopEffettuati++;
                 return true;
             } else {
@@ -61,29 +69,46 @@ public class Auto {
     }
 
     /**
-     * Metodo che permette all'auto di percorrere una certa distanza. Sarà uguale per tutti (50 m/s) se la safety car è attiva, altrimenti sarà casuale.
-     * @param safetyCarAttiva true se la safety car è attiva, false altrimenti.
+     * Metodo che determina l'avvenimento di un incidente.
+     * @return true se fa un incidente, false altrimenti.
      */
-    public void percorri(boolean safetyCarAttiva) {
-        //TODO:
-        // 1) Se la safety car è attiva, l'auto percorre 50 m/s.
-        // 2) Se non è attiva, l'auto percorre una distanza casuale generata
-        // 3) Se l'auto effettua un pit stop, lo comunica al giudice.
+    public boolean incidente(){
+        if(!incidente && sabotata) {
+            Random random = new Random();
+            if(random.nextInt(5) == 4) {
+                incidente = true;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
-    /**
-     * Metodo che restituisce lo spazio rimanente da percorrere.
-     * @return spazio rimanente.
-     */
     public int getSpazioRimanente() {
         return spazioRimanente;
     }
 
-    /**
-     * Metodo che restituisce lo spazio percorso dall'auto.
-     * @return spazio percorso.
-     */
     public int getSpazioPercorso() {
         return spazioPercorso;
+    }
+
+    /**
+     * Metodo principale. Determina l'avanzamento dell'auto durante la gara.
+     * @param safetyCar se la safety car è nel circuito
+     * @return la velocità (corrispondente allo spazio percorso)
+     */
+    public int percorri(boolean safetyCar) {
+        if(safetyCar) {
+            spazioPercorso += 50;
+            spazioRimanente -= 50;
+            return 50;
+        } else {
+            int velocita = generaVelocita();
+            spazioPercorso += velocita;
+            spazioRimanente -= velocita;
+            return velocita;
+        }
     }
 }

@@ -1,8 +1,8 @@
 package org.tpsit;
 
 /**
- * @author Monica Ciuchetti
- * @version 1.0
+ * @author Monica Ciuchetti & Matteo Bagnoletti Tini
+ * @version 2.0
  * @since 1.0
  * @see <a href="https://github.com/matbagnoletti/Encryption">Original project (Encryption)</a>
  * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html">Documentazione Oracle Runnable</a>
@@ -40,9 +40,9 @@ public class Vigenere implements Runnable{
         int c,r,car;
         for(r=ir; r<fr; r++) {
             for(c=ic; c<fc; c++) {
-                car = r + c + 65;
-                if(car>90) {
-                    car = car - 26;
+                car = r + c + 32;
+                if(car>126) {
+                    car = car - 95;
                 }
                 this.matrix.setElemento(r, c, car);
             }

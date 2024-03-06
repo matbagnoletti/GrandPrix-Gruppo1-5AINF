@@ -20,8 +20,8 @@ public class Cifrario {
     private Vigenere vigenere;
     private Thread cifratore;
     public Cifrario(String verme){
-        this.matrice = new Matrice(verme.toUpperCase());
-        this.vigenere = new Vigenere(0, 26, 0, 26, matrice);
+        this.matrice = new Matrice(verme);
+        this.vigenere = new Vigenere(0, 95, 0, 95, matrice);
         this.cifratore = new Thread(this.vigenere);
         this.cifratore.start();
     }

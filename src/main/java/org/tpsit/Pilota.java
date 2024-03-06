@@ -2,27 +2,17 @@ package org.tpsit;
 
 /**
  * Classe che rappresenta un pilota.
+ * @author Matteo Bagnoletti Tini
  */
 public class Pilota extends Thread {
-    /**
-     * Nome del pilota.
-     */
     private String nome;
-    /**
-     * Squadra di appartenenza del pilota.
-     */
     private String squadra;
-    /**
-     * Numero di vittorie del pilota.
-     */
     private int vittorie;
-    /**
-     * Numero di gare giocate in totale dal pilota.
-     */
     private int gareGiocate;
-    /**
-     * Variabile booleana che indica se il pilota ha avuto un incidente.
-     */
+    private boolean vincitore = false;
+    private Giudice giudice;
+    private volatile boolean safetyCar = false;
+    private int prossimoGiro;
     private boolean incidentato = false;
     /**
      * Auto del pilota.
@@ -36,12 +26,14 @@ public class Pilota extends Thread {
      * @param vittorie Vittorie del pilota.
      * @param gareGiocate Gare giocate in totale dal pilota.
      */
-    public Pilota(String nome, String squadra, int vittorie, int gareGiocate, Circuito circuito) {
+    public Pilota(String nome, String squadra, int vittorie, int gareGiocate, Circuito circuito, Giudice giudice) {
         this.nome = nome;
         this.squadra = squadra;
         this.vittorie = vittorie;
         this.gareGiocate = gareGiocate;
         this.auto = new Auto(squadra, circuito);
+        this.giudice = giudice;
+        this.prossimoGiro = circuito.getLunghezzaGiro();
     }
 
     public String getNome() {
@@ -60,18 +52,53 @@ public class Pilota extends Thread {
         return gareGiocate;
     }
 
-    @Override
-    public void run() {
-        //TODO:
-        // 1) Il pilota percorre il circuito finché non ha completato tutti i giri o non ha avuto un incidente.
-        // 2) Ogni volta che il pilota completa un giro, lo deve comunicare al giudice che stampa la classifica.
-        // 3) Ad ogni giro il pilota dovrà attendere un po' di tempo (ad esempio 1 secondo) prima di percorrere il giro successivo.
+    public boolean isVincitore() {
+        return vincitore;
     }
 
-    /**
-     * Imposta il pilota come incidentato
-     */
-    public void setIncidentato() {
-        this.incidentato = true;
+    public void setVincitore() {
+        this.vittorie++;
+        this.vincitore = true;
+    }
+
+    public void setSafetyCar(boolean safetyCar) {
+        this.safetyCar = safetyCar;
+    }
+
+    public void setSabotato() {
+        this.auto.setSabotata();
+    }
+
+    @Override
+    public void run() {
+        this.gareGiocate++;
+        int contaGiri = 0;
+        int velocita = 0;
+
+        while(auto.getSpazioRimanente() > 0){
+            if(auto.incidente()){
+                giudice.segnalaIncidente(this);
+                incidentato = true;
+                break;
+            } else if(auto.pitstop()){
+                giudice.segnalaPitStop(this);
+            } else {
+                velocita = auto.percorri(safetyCar);
+                if(auto.getSpazioPercorso() >= prossimoGiro){
+                    contaGiri++;
+                    prossimoGiro += prossimoGiro;
+                    giudice.segnalaProgressi(this, contaGiri, auto.getSpazioPercorso(), velocita);
+                }
+            }
+            try {
+                sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println("\033[31mSi è verificato un errore nel sospendere " + getNome() + "!\033[0m");
+            }
+        }
+
+        if(!incidentato){
+            giudice.aggiungiInClassifica(this);
+        }
     }
 }

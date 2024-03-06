@@ -2,7 +2,7 @@ package org.tpsit;
 
 /**
  * @author Monica Ciuchetti & Matteo Bagnoletti Tini
- * @version 1.1
+ * @version 2.0
  * @since 1.0
  * @see <a href="https://github.com/matbagnoletti/Encryption">Original project (Encryption)</a>
  */
@@ -12,8 +12,13 @@ public class Matrice {
     char[][] mv;
     String verme;
 
+    /**
+     * Nuova matrice di Vigenere
+     * Contiene tutti i caratteri ASCII stampabili (da 32 a 126 compresi)
+     * @param verme
+     */
     public Matrice(String verme) {
-        this.mv = new char[26][26];
+        this.mv = new char[95][95];
         this.verme = verme;
     }
 
@@ -29,8 +34,8 @@ public class Matrice {
         int r;
         int c;
 
-        for (r = 0; r < 26; r++) {
-            for (c = 0; c < 26; c++) {
+        for (r = 0; r < 95; r++) {
+            for (c = 0; c < 95; c++) {
                 System.out.print(this.getElemento(r, c));
             }
             System.out.print("\n");
@@ -52,8 +57,8 @@ public class Matrice {
             if(!Character.isLetter(fch.charAt(j))){
                 fcf.append(fch.charAt(j));
             } else {
-                col = (int) fch.charAt(j) - 65;
-                row = (int) verme.charAt(k) - 65;
+                col = (int) fch.charAt(j) - 32;
+                row = (int) verme.charAt(k) - 32;
                 fcf.append(mv[row][col]);
             }
             k++;
@@ -78,10 +83,10 @@ public class Matrice {
             if(!Character.isLetter(fcf.charAt(j))){
                 fch.append(fcf.charAt(j));
             } else {
-                row = (int) verme.charAt(k) - 65;
-                for (col = 0; col < 26; col++) {
+                row = (int) verme.charAt(k) - 32;
+                for (col = 0; col < 95; col++) {
                     if (mv[row][col] == fcf.charAt(j)) {
-                        char car = (char) (col + 65);
+                        char car = (char) (col + 32);
                         fch.append(car);
                     }
                 }

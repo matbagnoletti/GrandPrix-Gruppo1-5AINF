@@ -2,8 +2,8 @@ package org.tpsit;
 
 /**
  * Classe che rappresenta un circuito della gara.
+ * @author Matteo Bagnoletti Tini
  */
-
 public class Circuito {
     /**
      * Nome del circuito.
