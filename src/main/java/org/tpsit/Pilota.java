@@ -4,13 +4,7 @@ package org.tpsit;
  * Classe che rappresenta un pilota.
  */
 public class Pilota extends Thread {
-    /**
-     * Nome del pilota.
-     */
     private String nome;
-    /**
-     * Squadra di appartenenza del pilota.
-     */
     private String squadra;
     /**
      * Numero di vittorie del pilota.
@@ -24,9 +18,6 @@ public class Pilota extends Thread {
      * Variabile booleana che indica se il pilota ha avuto un incidente.
      */
     private boolean incidentato = false;
-    /**
-     * Auto del pilota.
-     */
     public Auto auto;
     
     /**

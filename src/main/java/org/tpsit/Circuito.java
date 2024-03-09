@@ -5,9 +5,6 @@ package org.tpsit;
  */
 
 public class Circuito {
-    /**
-     * Nome del circuito.
-     */
     private String nome;
     /**
      * Lunghezza del circuito in metri.
@@ -17,12 +14,9 @@ public class Circuito {
      * Numero di PitStop permessi del circuito.
      */
     private int numeroPitStop;
-    /**
-     * Numero di giri del circuito.
-     */
     private int numeroGiri;
     /**
-     * Lunghezza di un giro del circuito calcolato matematicamente.
+     * Lunghezza di un giro del circuito (calcolato matematicamente).
      */
     private int lunghezzaGiro;
     /**
@@ -46,34 +40,18 @@ public class Circuito {
         this.lunghezzaGiro = lunghezza / numeroGiri;
     }
 
-    /**
-     * Metodo che restituisce il nome del circuito.
-     * @return nome del circuito
-     */
     public String getNome() {
         return nome;
     }
 
-    /**
-     * Metodo che restituisce la lunghezza del circuito.
-     * @return lunghezza del circuito
-     */
     public int getLunghezza() {
         return lunghezza;
     }
 
-    /**
-     * Metodo che restituisce il numero di PitSto permessi del circuito.
-     * @return numeroPitStop del circuito
-     */
     public int getNumeroPitStop() {
         return numeroPitStop;
     }
 
-    /**
-     * Metodo che restituisce il numero di giri del circuito.
-     * @return numero di giri del circuito
-     */
     public int getNumeroGiri() {
         return numeroGiri;
     }
@@ -86,10 +64,6 @@ public class Circuito {
         this.safetyCar = safetyCar;
     }
 
-    /**
-     * Metodo che restituisce la lunghezza di un singolo giro in metri.
-     * @return lunghezzaGiro
-     */
     public int getLunghezzaGiro() {
         return lunghezzaGiro;
     }

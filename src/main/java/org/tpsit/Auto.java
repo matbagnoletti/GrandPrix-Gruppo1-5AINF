@@ -3,10 +3,6 @@ package org.tpsit;
 import java.util.Random;
 
 public class Auto {
-    /**
-     * Squadra di appartenenza dell'auto.
-     * Rimane costante.
-     */
     private final String squadra;
     /**
      * Circuito su cui l'auto sta correndo.
