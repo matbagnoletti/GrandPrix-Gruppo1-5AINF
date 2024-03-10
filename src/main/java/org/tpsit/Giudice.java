@@ -1,13 +1,14 @@
 package org.tpsit;
 
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
- * @author Gruppo 1: Matteo Bagnoletti Tini, Ismail Hadeg, Leonardo Calderon.
- * Giudice.java => Classe di avvio del programma.
+ * Classe di avvio del programma. Si occupa di creare il circuito, i piloti e di gestire la gara.
+ *
+ * @author Matteo Bagnoletti Tini
+ * @author Ismail Hadeg
+ * @author Leonardo Calderon.
  */
 public class Giudice {
     /**

@@ -2,6 +2,10 @@ package org.tpsit;
 
 import java.util.Random;
 
+/**
+ * Classe che rappresenta un'auto da corsa.
+ * Si occupa di percorrere una certa distanza, effettuare pit stop e comunicare al giudice il suo stato.
+ */
 public class Auto {
     private final String squadra;
     /**

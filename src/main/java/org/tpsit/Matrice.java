@@ -1,7 +1,10 @@
 package org.tpsit;
 
 /**
- * @author Monica Ciuchetti & Matteo Bagnoletti Tini
+ * Matrice che rappresenta la tabella di Vigenere.
+ *
+ * @author Monica Ciuchetti
+ * @author Matteo Bagnoletti Tini
  * @version 1.1
  * @since 1.0
  * @see <a href="https://github.com/matbagnoletti/Encryption">Original project (Encryption)</a>
@@ -10,6 +13,9 @@ package org.tpsit;
 public class Matrice {
 
     char[][] mv;
+    /**
+     * Stringa che rappresenta la chiave di cifratura e decifratura nel cifrario di Vigenere.
+     */
     String verme;
 
     public Matrice(String verme) {
@@ -37,6 +43,12 @@ public class Matrice {
         }
     }
 
+    /**
+     * Metodo per cifrare un testo in chiaro.
+     * @param fch testo in chiaro da cifrare.
+     * @return testo cifrato.
+     * @throws ArrayIndexOutOfBoundsException se il testo contiene caratteri non cifrabili.
+     */
     public String cifra(String fch) throws ArrayIndexOutOfBoundsException {
         StringBuilder fcf;
         int k, j, col, row;
@@ -62,6 +74,11 @@ public class Matrice {
         return (fcf.toString());
     }
 
+    /**
+     * Metodo per decifrare un testo cifrato.
+     * @param fcf testo cifrato da decifrare.
+     * @return testo decifrato.
+     */
     public String deCifra(String fcf) {
         StringBuilder fch = new StringBuilder();
 

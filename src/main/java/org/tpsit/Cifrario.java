@@ -1,6 +1,8 @@
 package org.tpsit;
 
 /**
+ * Classe che permette di cifrare e decifrare un messaggio secondo Vigenere (in questo caso la password);
+ *
  * @author Matteo Bagnoletti Tini
  * @version 1.0
  * @see <a href="https://github.com/matbagnoletti/Encryption">Original project (Encryption)</a>
@@ -11,8 +13,6 @@ package org.tpsit;
  * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html">Documentazione Oracle BufferedReader</a>
  * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html">Documentazione Oracle InputStreamReader</a>
  * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html">Documentazione Oracle IOException</a>
- * 
- * Classe che permette di cifrare e decifrare un messaggio secondo Vigenere (in questo caso la password);
  */
 
 public class Cifrario {
@@ -25,6 +25,12 @@ public class Cifrario {
         this.cifratore = new Thread(this.vigenere);
         this.cifratore.start();
     }
+
+    /**
+     * Metodo che cifra un testo in chiaro.
+     * @param testoInChiaro testo da cifrare.
+     * @return testo cifrato.
+     */
     public String cifra(String testoInChiaro){
         try {
             this.cifratore.join();
@@ -46,6 +52,11 @@ public class Cifrario {
         return testoCifrato;
     }
 
+    /**
+     * Metodo che decifra un testo cifrato.
+     * @param testoCifrato testo da decifrare.
+     * @return testo decifrato.
+     */
     public String decifra(String testoCifrato) {
         try {
             this.cifratore.join();

@@ -51,5 +51,11 @@ Per poter utilizzare il progetto è necessario eseguire il file [Giudice.java](s
 ## Storico del progetto
 Tutte le modifiche degne di nota di questo progetto verranno documentate e rese pubbliche nel file [CHANGELOG.md](CHANGELOG.md).
 
+## Documentazione
+La documentazione di questo progetto è disponibile nella cartella [documentazione](documentazione):
+- [JavaDoc](documentazione/javadoc): documentazione generata automaticamente da JavaDoc. Si può visualizzare aprendo il file `index.html` con un browser.
+- [UML](documentazione/progettazione/UML): diagramma UML del progetto.
+- [Diagramma dei casi d'uso](documentazione/progettazione/DiagrammaCasiUso.png): diagramma dei casi d'uso del progetto. 
+
 ## Licenza d'uso
 Questo progetto (e tutte le sue versioni) sono rilasciate sotto la [MB Collective Copyleft License](LICENSE).

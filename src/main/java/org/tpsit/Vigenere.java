@@ -1,6 +1,8 @@
 package org.tpsit;
 
 /**
+ * Cifrario di Vigenere.
+ *
  * @author Monica Ciuchetti
  * @version 1.0
  * @since 1.0

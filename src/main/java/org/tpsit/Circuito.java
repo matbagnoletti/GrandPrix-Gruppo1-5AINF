@@ -2,8 +2,8 @@ package org.tpsit;
 
 /**
  * Classe che rappresenta un circuito della gara.
+ * Contiene le informazioni del circuito e i metodi per accedervi.
  */
-
 public class Circuito {
     private String nome;
     /**
